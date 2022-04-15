@@ -1,0 +1,333 @@
+html,body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #111;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.bgr-img {
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+}
+.parent-container {
+    width: 400px;
+    height: 85vh;
+    position: relative;
+}
+.title {
+    position: absolute;
+    width: 300px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+.title span:first-child {
+    color: #fff;
+    text-shadow: 0 0 15px #f41f03,
+                0 0 25px #f41f03,
+                0 0 35px #f41f03, 
+                0 0 45px #f41f03; 
+}
+.title span:last-child {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4,
+                0 0 20px #03bcf4,
+                0 0 40px #03bcf4, 
+                0 0 70px #03bcf4; 
+}
+.container {
+    margin-top: 40%;
+    width: 400px;
+    height: 150px;
+    /* background-color: #006afd; */
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform: perspective(1000px);
+    position: relative;
+    cursor: default;
+    animation: appear 0.8s ease-in;
+}
+.mouse-instruction {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ccc;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: leftNright 3.5s ease-in-out infinite;
+    transform-origin: bottom;
+    font-size: 10px;
+}
+@keyframes leftNright {
+    0% {
+        transform: translateX(-80%) rotate(-35deg);
+        opacity: 1;
+    }
+    50% {
+        transform:translateX(-20%) rotate(35deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-80%) rotate(-35deg);
+        opacity: 1;
+    }
+}
+.mouse-instruction p {
+    margin: 25px 0px 5px;
+}
+.mouse-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes appear {
+    from {
+        transform: perspective(1000px) rotateX(5deg) rotateY(20deg) scale(0.7);
+    }
+    to {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+    }
+}
+
+.digital--clock {
+    position: absolute;
+    inset: 0;
+    background-color: red;
+    transform: translateZ(50px);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    box-shadow: inset 0px 0px 50px 100px rgba(0,0,0,0.55);
+}
+.digital--clock >* {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+.digital--clock--top {
+    position: absolute;
+    inset: -1px;
+    background-color: green;
+    transform: translateZ(75px) translateY(-50%) rotateX(90deg)
+}
+.digital--clock--top::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    background-color: yellow;
+    transform: translateZ(-10px);
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+    box-shadow: inset 0 15px 45px 80px rgba(0,0,0,0.45);
+}
+.digital--clock--top::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 135px;
+    background-color: yellow;
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+    transform: rotateX(60deg) translateZ(-7px) translateY(-5px);
+    clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+}
+.digital--clock--bottom {
+    position: absolute;
+    inset: -1px;
+    background-color: green;
+    transform: translateZ(75px) translateY(50%) rotateX(90deg);
+}
+.digital--clock--bottom::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    background-color: yellow;
+    transform: translateZ(10px);
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+    box-shadow: inset 0 15px 45px 80px rgba(0,0,0,0.45);
+}
+.digital--clock--bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 135px;
+    background-color: yellow;
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+    transform: rotateX(-60deg) translateZ(7px) translateY(-5px);
+    clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+}
+.digital--clock--left {
+    position: absolute;
+    left:-1px;
+    top:-1px;
+    bottom: -1px;
+    width: 150px;
+    background-color: green;
+    transform: translateZ(75px) translateX(-50%) rotateY(90deg)
+}
+.digital--clock--left::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 0px;
+    bottom: 10px;
+    background-color: yellow;
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+    transform: translateZ(10px);
+    box-shadow: inset -15px 0px 45px 60px rgba(0,0,0,0.45);
+}
+.digital--clock--left::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 130px;
+    top: 0;
+    background-color: yellow;
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+    transform: translateZ(18px) rotateY(-60deg) translateX(-11px);
+    box-shadow: inset 0 0 5px 5px rgba(0,0,0,0.15);
+    clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+}
+.digital--clock--right {
+    position: absolute;
+    right:-1px;
+    top:-1px;
+    bottom: -1px;
+    width: 150px;
+    background-color: green;
+    transform: translateZ(75px) translateX(50%) rotateY(90deg);
+}
+.digital--clock--right::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 0px;
+    bottom: 10px;
+    background-color: yellow;
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+    transform: translateZ(-10px);
+    box-shadow: inset -15px 0px 45px 60px rgba(0,0,0,0.45);
+}
+.digital--clock--right::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 130px;
+    top: 0;
+    background-color: yellow;
+    background-image: url('./image/R.jpg');
+    background-size: cover;
+    transform: translateZ(-18px) rotateY(60deg) translateX(-11px);
+    box-shadow: inset 0 0 5px 5px rgba(0,0,0,0.15);
+    clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+}
+.digital--clock--number {
+    position: absolute;
+    inset: 20px;
+
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform: translateZ(75px);
+}
+.digital--clock--number .num {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: all ease-in 0.5s;
+}
+.digital--clock--number .num::before {
+    content: "";
+    inset: 0;
+    width: 100px;
+    position: absolute;
+    transform: rotateY(90deg) translateZ(-50px) translateX(0);
+    background-size: cover;
+    background-image: url('./image/R (1).jpg');
+    box-shadow: inset 0px 0px 15px 45px rgba(0,0,0,0.40);
+}
+.digital--clock--number .num::after {
+    content: "";
+    inset: 0;
+    width: 100px;
+    position: absolute;
+    transform: rotateY(90deg) translateZ(30px) translateX(0px);
+    background-size: cover;
+    background-image: url('./image/R (1).jpg');
+    box-shadow: inset 0px 0px 15px 45px rgba(0,0,0,0.40);
+}
+.digital--clock--number .num span {
+    position: absolute;
+    inset: 0;
+    background-color: blue;
+    transform: rotateX(calc(var(--j)* 90deg)) translateZ(50px) ;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-size: 60px;
+    background-size: cover;
+    background-image: url('./image/R (1).jpg');
+
+    user-select: none;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    box-shadow: inset 0px 0px 15px 15px rgba(0,0,0,0.15);
+}
+.digital--clock--number .num:nth-child(2) span,
+.digital--clock--number .num:nth-child(1) span
+{
+    text-shadow: 0 0 10px #03bcf4,
+                0 0 20px #03bcf4,
+                0 0 40px #03bcf4, 
+                0 0 70px #03bcf4; 
+    
+}
+
+@keyframes glow {
+    50% {        
+        color: #310803;
+        text-shadow: none;
+    }
+}
+.digital--clock--number .num:nth-child(3) span,
+.digital--clock--number .num:nth-child(4) span
+{
+    color: #fff;
+        text-shadow: 0 0 15px #f41f03,
+                0 0 25px #f41f03,
+                0 0 35px #f41f03, 
+                0 0 45px #f41f03; 
+     
+    animation: glow 1s linear infinite;
+}
