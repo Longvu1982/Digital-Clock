@@ -19,12 +19,12 @@ body {
 }
 .parent-container {
     width: 400px;
-    height: 85vh;
+    height: 60vh;
     position: relative;
 }
 .title {
     position: absolute;
-    width: 300px;
+    width: 600px;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -33,6 +33,7 @@ body {
 }
 .title span:first-child {
     color: #fff;
+    font-size: 60px;
     text-shadow: 0 0 15px #f41f03,
                 0 0 25px #f41f03,
                 0 0 35px #f41f03, 
@@ -40,13 +41,14 @@ body {
 }
 .title span:last-child {
     color: #fff;
+    font-size: 60px;
     text-shadow: 0 0 10px #03bcf4,
                 0 0 20px #03bcf4,
                 0 0 40px #03bcf4, 
                 0 0 70px #03bcf4; 
 }
 .container {
-    margin-top: 40%;
+    margin-top: 50%;
     width: 400px;
     height: 150px;
     /* background-color: #006afd; */
@@ -108,7 +110,7 @@ body {
     position: absolute;
     inset: 0;
     background-color: red;
-    transform: translateZ(50px);
+    transform: scale(1.3) translateZ(50px);
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     box-shadow: inset 0px 0px 50px 100px rgba(0,0,0,0.55);
