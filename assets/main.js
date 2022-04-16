@@ -17,16 +17,16 @@ let isDown = false
 document.addEventListener('mousedown', ()=>{
     isDown = true;
 })
-document.addEventListener('touchstart', (e)=>{
-    isDown = true;
-    console.log(e)
-})
+// document.addEventListener('touchstart', (e)=>{
+//     isDown = true;
+//     console.log(e)
+// })
 document.addEventListener('mouseup', ()=>{
     isDown = false;
 })
-document.addEventListener('touchend', ()=>{
-    isDown = false;
-})
+// document.addEventListener('touchend', ()=>{
+//     isDown = false;
+// })
 
 // Object turn on mouse move
 let rotateY = 0;
@@ -42,29 +42,29 @@ document.addEventListener('mousemove', (e)=>{
     }
 })
 
-var previousTouch
-document.addEventListener('touchmove', (e)=>{
-    const touch = e.touches[0];
+// var previousTouch
+// document.addEventListener('touchmove', (e)=>{
+//     const touch = e.touches[0];
 
-    if (previousTouch) {
-        // be aware that these only store the movement of the first touch in the touches array
-        e.movementX = touch.pageX - previousTouch.pageX;
-        e.movementY = touch.pageY - previousTouch.pageY;
-    };
+//     if (previousTouch) {
+//         // be aware that these only store the movement of the first touch in the touches array
+//         e.movementX = touch.pageX - previousTouch.pageX;
+//         e.movementY = touch.pageY - previousTouch.pageY;
+//     };
 
-    previousTouch = touch;
-    if(isDown) {
-    if (e.movementX && e.movementY) {
-        rotateX -= e.movementY
-        rotateY += e.movementX
-        console.log('rotatex', rotateX)
-        clockContain.style.transform = `perspective(1000px) 
-                                rotateY(${rotateY}deg)
-                                rotateX(${rotateX}deg)`
-    }
+//     previousTouch = touch;
+//     if(isDown) {
+//     if (e.movementX && e.movementY) {
+//         rotateX -= e.movementY
+//         rotateY += e.movementX
+//         console.log('rotatex', rotateX)
+//         clockContain.style.transform = `perspective(1000px) 
+//                                 rotateY(${rotateY}deg)
+//                                 rotateX(${rotateX}deg)`
+//     }
    
-}
-})
+// }
+// })
 
 // Hover effect
 
